@@ -1,11 +1,13 @@
 //
 //  01.CleanCode.swift
-//  
+//
 //
 //  Created by 한현민 on 6/3/25.
 //
 
 import UIKit
+
+// MARK: - 인스턴스 생성 다루기
 
 public enum Gender: String {
     case male = "M"
@@ -124,5 +126,36 @@ public struct PersonWithBuilder {
         public func build() -> PersonWithBuilder {
             PersonWithBuilder(name: name, age: age, gender: gender, weight: weight, height: height, isMarried: isMarried)
         }
+    }
+}
+
+// MARK: - 예외 다루기
+
+public struct VPC {
+    let ipAddress: String
+}
+
+public enum VPCProcessingError: String, Error {
+    case encounteredUnremovableVPC = "Some VPCs cannot be deleted."
+}
+
+public final class VPCManager {
+    var VPCs: [VPC] = [
+        .init(ipAddress: "70.220.123.123"),
+        .init(ipAddress: "123.123.123.123")
+    ]
+    
+    public init() {}
+    
+    /// 처리 실패 여부를 Bool 타입으로 표현하는 메서드
+    public func deleteVPCResourceUsingBool() -> Bool {
+        // do something...
+        return false
+    }
+    
+    /// Typed Error 방식으로 예외를 발생시키는 메서드
+    public func deleteVPCResourceUsingException() throws (VPCProcessingError) {
+        // do something...
+        throw .encounteredUnremovableVPC
     }
 }
