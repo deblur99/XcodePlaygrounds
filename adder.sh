@@ -7,7 +7,7 @@ PLAYGROUND_PATH="$1"
 FILE_NAME="$2"
 
 if [ -z "$PLAYGROUND_PATH" ] || [ -z "$FILE_NAME" ]; then
-  echo "사용법: $0 <플레이그라운드 경로> <파일 이름>"
+  echo "사용법: $0 <플레이그라운드 경로> <확장자 없는 파일 이름>"
   exit 1
 fi
 

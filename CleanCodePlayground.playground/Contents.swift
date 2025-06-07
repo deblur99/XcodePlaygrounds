@@ -1,8 +1,11 @@
 import UIKit
+import PlaygroundSupport
+
+PlaygroundPage.current.needsIndefiniteExecution = true
 
 // MARK: 01. Clean Code
 
-func test01_1() {
+func test_01_1() {
     // 1) 기존 생성자 호출 방식
     let jua: Person = .init(name: "김주아", age: 9, gender: .female, weight: 20.0, height: 130.0, isMarried: false)
 
@@ -21,7 +24,7 @@ func test01_1() {
     print("wisue: \(wisue)")
 }
 
-func test01_2() {
+func test_01_2() {
     let vpcManager = VPCManager()
     
     // 1) 처리 성공 여부를 Bool로 표현하는 방식
@@ -38,4 +41,16 @@ func test01_2() {
     }
 }
 
-test01_2()
+// MARK: 02. Code Smells
+
+func test_02_2() {
+    let store = Store()
+    Task {
+        await store.printSellCoffeeMenu(saleSystem: SaleSystem.shared)
+    }
+    Task {
+        await store.printSellPizzaMenu(saleSystem: SaleSystem.shared)
+    }
+}
+
+test_02_2()

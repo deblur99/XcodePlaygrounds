@@ -1,4 +1,4 @@
-## adder.sh 사용법
+## .playground 경로 내부의 adder.sh 사용법
 
 ```
 $0 <파일 이름>

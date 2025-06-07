@@ -1,7 +1,7 @@
 ## .playground 경로 외부의 adder.sh 사용법
 
 ```
-$0 <.playground 디렉토리 이름> <파일 이름>
+$0 <.playground 디렉토리 이름> <확장자 없는 파일 이름>
 ```
 
 ### 사용 예시
