@@ -27,7 +27,7 @@ for dir in "Playgrounds/Resources" "Playgrounds/Sources"; do
   fi
 done
 
-new_number=$(printf "%02d" $((max_number + 1)))
+new_number=$(printf "%02d" "$((10#$max_number + 1))")
 
 # 새 파일 생성
 touch "Playgrounds/Resources/$new_number.$FILE_NAME.md"
