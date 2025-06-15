@@ -6,9 +6,9 @@
 //
 
 import Testing
-@testable import Playgrounds
+@testable import MyPlaygrounds
 
-struct PlaygroundsTests {
+struct MyPlaygroundsTests {
     @Test func test_01_1() {
         // 1) 기존 생성자 호출 방식
         let jua: Person = .init(name: "김주아", age: 9, gender: .female, weight: 20.0, height: 130.0, isMarried: false)
